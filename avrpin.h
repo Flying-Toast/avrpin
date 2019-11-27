@@ -25,5 +25,15 @@
 #define READ_IN(pindef) _READ_IN(pindef)
 #define _READ_IN(port, pinbit) (_INPUT(port) & pinbit)
 
+#define _PORTLETTER_OF(port, pinbit) port
+#define PINBIT_OF(pindef) _PINBIT_OF(pindef)
+#define _PINBIT_OF(port, pinbit) pinbit
+#define DDR_OF(pindef) _DDR_OF(_PORTLETTER_OF(pindef))
+#define _DDR_OF(port) _DDR(port)
+#define PORT_OF(pindef) _PORT_OF(_PORTLETTER_OF(pindef))
+#define _PORT_OF(port) _PORT(port)
+#define INPUT_REG_OF(pindef) _INPUT_REG_OF(_PORTLETTER_OF(pindef))
+#define _INPUT_REG_OF(port) _INPUT(port)
+
 
 #endif
