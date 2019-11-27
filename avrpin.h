@@ -2,7 +2,9 @@
 #define __AVRPIN_H
 
 
-#include <avr/io.h>
+#ifndef _AVR_IO_H_
+#error <avr/io.h> must be included first
+#endif
 
 #define BIT(n) (1 << n)
 #define _PIN(port, pinnum) P ## port ## pinnum
@@ -32,4 +34,4 @@ else \
 #define _READ_IN(port, pinbit) (_INPUT(port) & pinbit)
 
 
-#endif
+#endif /* __AVRPIN_H */
