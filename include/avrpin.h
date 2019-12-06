@@ -2,10 +2,6 @@
 #define __AVRPIN_H
 
 
-#ifndef _AVR_IO_H_
-#error <avr/io.h> must be included first
-#endif
-
 #define BIT(n) (1 << (n))
 #define _PIN(port, pinnum) P ## port ## pinnum
 #define _DDR(port) DDR ## port
