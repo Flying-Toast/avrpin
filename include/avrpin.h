@@ -6,7 +6,7 @@
 #error <avr/io.h> must be included first
 #endif
 
-#define BIT(n) (1 << n)
+#define BIT(n) (1 << (n))
 #define _PIN(port, pinnum) P ## port ## pinnum
 #define _DDR(port) DDR ## port
 #define _PORT(port) PORT ## port
