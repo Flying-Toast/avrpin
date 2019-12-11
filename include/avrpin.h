@@ -27,7 +27,7 @@ else \
 #define _WRITE_OUT(port, pinbit, state) _SET_BIT(_PORT(port), pinbit, state)
 
 #define READ_IN(pindef) _READ_IN(pindef)
-#define _READ_IN(port, pinbit) (_INPUT(port) & pinbit)
+#define _READ_IN(port, pinbit) (_INPUT(port) & (pinbit))
 
 
 #endif /* __AVRPIN_H */
