@@ -9,8 +9,8 @@
 #define _INPUT(port) PIN ## port
 #define PINDEF(port, pinnum) port, BIT(_PIN(port, pinnum))
 
-#define _SET_BIT_LOW(reg, bit) do { reg &= ~bit; } while(0)
-#define _SET_BIT_HIGH(reg, bit) do { reg |= bit; } while(0)
+#define _SET_BIT_LOW(reg, bit) do { reg &= ~(bit); } while(0)
+#define _SET_BIT_HIGH(reg, bit) do { reg |= (bit); } while(0)
 #define _SET_BIT(reg, bit, boolean) do { \
 if (boolean) \
 	_SET_BIT_HIGH(reg, bit); \
