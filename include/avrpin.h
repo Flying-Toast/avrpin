@@ -20,14 +20,14 @@ else \
 
 #define INPUT  0
 #define OUTPUT 1
-#define PINDIR(pindef, dir) _PINDIR(pindef, dir)
+#define pindir(pindef, dir) _PINDIR(pindef, dir)
 #define _PINDIR(port, pinbit, dir) _SET_BIT(_DDR(port), pinbit, dir)
 
-#define WRITE_OUT(pindef, state) _WRITE_OUT(pindef, state)
-#define _WRITE_OUT(port, pinbit, state) _SET_BIT(_PORT(port), pinbit, state)
+#define iowrite(pindef, state) _IOWRITE(pindef, state)
+#define _IOWRITE(port, pinbit, state) _SET_BIT(_PORT(port), pinbit, state)
 
-#define READ_IN(pindef) _READ_IN(pindef)
-#define _READ_IN(port, pinbit) (_INPUT(port) & (pinbit))
+#define ioread(pindef) _IOREAD(pindef)
+#define _IOREAD(port, pinbit) (_INPUT(port) & (pinbit))
 
 
 #endif /* __AVRPIN_H */
